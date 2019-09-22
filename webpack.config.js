@@ -27,6 +27,17 @@ module.exports = {
                 ]
             },
             {
+                test: /\.(ttf|otf|woff|eot)$/,
+                use: [
+                    {
+                     loader: 'file-loader',
+                     options: {
+                         name: "fonts/[name].[ext]"
+                     }
+                    }
+                ]
+            },
+            {
                 test:/\.scss$/,
                 use:[
                     "style-loader",
