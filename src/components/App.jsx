@@ -12,12 +12,7 @@ class Top1 extends Component{
      }
      render(){
           console.log("Llego aqui");
-          const container = {
-               position: "relative",
-               width: "80%",
-               marginLeft: "167px",
-               fontSize: "10px"
-          }    
+            
           const firstlink = {
                position: "absolute",
                left: "10px",
@@ -56,7 +51,7 @@ class Top1 extends Component{
                margin: "0"
           }
           return(
-               <div style={container}>
+               <div className="container">
                     <a href="http://disney.go.com">
                          <span style={firstlink}>Show Disney.com</span>
                     </a>
@@ -75,10 +70,44 @@ class Top1 extends Component{
                          </div>
                          <div style={account2}>
                               <input type="text" style={input1} placeholder="search disneyworld.com"/>
-                         </div>
-                         
+                         </div>       
                     </div>
                </div>
+          );
+     }
+}
+
+class Top2 extends Component{
+     constructor(props){
+          super(props)
+          this.state = {
+               // text: this.props.text
+          }
+     }
+     render(){
+          return(
+               <div className="Tabs">
+                    {this.props.text}                 
+               </div>
+          );
+     }
+}
+
+class BarPage extends Component{
+     render(){
+          return(
+               <div className="topbar"> 
+                         <Top1 />
+                         <div className="container2">
+                              <img src="./src/images/WaltDisneyLogo.png" className="logoDisney"/>
+                              <Top2 text="Parks & Tickets"/>
+                              <Top2 text="Places to Stay"/>
+                              <Top2 text="Things to Do"/>
+                              <Top2 text="Shop"/>
+                              <Top2 text="Help & Rules"/>
+                              <Top2 text="Cart"/>
+                         </div>
+               </div>    
           );
      }
 }
@@ -93,10 +122,8 @@ class App extends Component{
           //      top: "100px"
           // }
           return(
-               <div className="topbar"> 
-                    {/* <div className="topbar-part1">Show Disney.com</div> */}
-                    <Top1 />
-                    {/* <div className="topbar-part2">Hola2</div> */}
+               <div className="page">
+                    <BarPage />
                </div>
           );
      }
