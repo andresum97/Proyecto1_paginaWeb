@@ -22,6 +22,10 @@ class AnimatedBack extends Component{
         const text = {
             fontSize: "50px"
         }
+        const text2 = {
+            fontSize: "20px",
+            margin : "0 40px 0 0"
+        }
         return(
             <div className="Videodiv">
                 {/* <img src="./src/images/Vader.gif" alt="Background" /> */}
@@ -37,11 +41,13 @@ class AnimatedBack extends Component{
                    </strong>
                 </div>
                 <div className="subTextVideo">
-                    <div>
+                    <div style={text2}>
                         {this.props.text2}
+                        <div className="fa fa-expand icons"></div>
                     </div>
-                    <div>
+                    <div style={text2}>
                         {this.props.text3}
+                        <div className="fa fa-angle-right"></div>
                     </div>
                 </div>
             </div>
