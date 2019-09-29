@@ -9,26 +9,35 @@ class DisneyImage extends Component{
         }
     }
     render(){
-        let imagewidth = this.props.imagewidth+"%";
+        let colortext = this.props.color;
         let text = this.props.text;
         let image = this.props.image;
-        console.log(imagewidth);
-        const style = {
-            width: imagewidth
+        let textsize =  this.props.textsize+"vw";
+        console.log(textsize);
+        let color = {
         }
-        const styleimage = {
-            width: "100%"
+        if(colortext=="1"){
+            color = {
+                color:"white",
+                fontSize: textsize
+            }
+        }else{
+            color = {
+                fontSize: textsize
+            }
+        }
+        console.log(color);
+        const styletext={
+            fontSize: "2vw"
         }
         return(
-            <div style={style}>
-                <div className="promotionsContainer">
-                    <img src={image} alt="MickyHalloween" style={styleimage}/>
-                    <div>
+            <div className="promotionsContainer" style={styletext}>
+                    <img src={image} alt="MickyHalloween" className="promotionsImage"/>
+                    <div className="promotionsText" style={color}>
                         <strong>
                             {text}
                         </strong>
                     </div>
-                </div>
             </div>
         );
     }
