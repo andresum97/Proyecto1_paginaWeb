@@ -22,16 +22,20 @@ class Top1 extends Component{
                float: "right",
                textAlign: "right",
                color: "#1994D7",
-               marginRight: "153px"
+               marginRight: "153px",
+               display:"flex",
+               flexDirection: "row",
+               padding: "0",
+               marginTop: "-6px"
           }
           const account = {
-               display: "inline-block",
-               margin: "0 6px 0 3px"
+               //display: "inline-block",
+               margin: "10px 6px 0 3px"
           }
           const account2 = {
-               display: "inline-block",
-               margin: "0 6px 0 10px",
-               top: "0px"
+              // display: "inline-block",
+               margin: "0 6px 0 15px",
+               // top: "0px"
           }
           const links = {
                color: "#1994D7"
@@ -42,6 +46,10 @@ class Top1 extends Component{
                top: "10px",
                margin: "0 0 0 10px"
           }
+          const icono = {
+               fontSize: "12px",
+               fontWeight: "bold"
+          }
           const input1 = {
                borderRadius: "18px",
                background: "#F8F8F8",
@@ -50,12 +58,15 @@ class Top1 extends Component{
                fontSize: "9px",
                margin: "0"
           }
+          const icona ={
+               marginLeft: "85px"
+          }
           return(
                <div className="container">
-                    <div  className="fa fa-angle-down"></div>
                     <a href="http://disney.go.com">
                          <span style={firstlink}>Show Disney.com</span>
                     </a>
+                    <i className="fa fa-angle-down" style={icona}></i>
                     <div style={rightside}>
                          <div style={account}>
                               {/* <a href="http://disney.go.com"> */}
@@ -69,8 +80,12 @@ class Top1 extends Component{
                          <div style={account}>
                               <span style={links}> United States (English)</span> 
                          </div>
-                         <div style={account2}>
-                              <input type="text" style={input1} placeholder="search disneyworld.com"/>
+                         <div className= "divInput" style={account2}>
+                              <div className="lupa">
+                                   {/* <img src="./src/images/lupa.svg" alt="lupa" style={icono}/> */}
+                                   <i style={icono} className="fa fa-search"></i>
+                              </div>
+                              <input type="text" placeholder="search disneyworld.com"/>
                          </div>       
                     </div>
                </div>
@@ -82,13 +97,23 @@ class Top2 extends Component{
      constructor(props){
           super(props)
           this.state = {
-               // text: this.props.text
           }
      }
      render(){
+          const style = {
+               padding:"8px 12px 0 12px"
+          }
+          const iconstyle={
+               fontSize: "16px"
+          }
+          let icons = this.props.icons;
+          console.log(icons);
           return(
                <div className="Tabs">
-                    {this.props.text}                 
+                    <div style={style}>
+                         <i className={icons} style={iconstyle}></i>
+                         {this.props.text}     
+                    </div>            
                </div>
           );
      }
@@ -106,7 +131,8 @@ class BarPage extends Component{
                               <Top2 text="Things to Do"/>
                               <Top2 text="Shop"/>
                               <Top2 text="Help & Rules"/>
-                              <Top2 text="Cart"/>
+                              <Top2 text=" Cart" icons="fa fa-shopping-cart"/>
+                              <Top2 text="MyDisneyExperience" icons="fa fa-empire"/>
                          </div>
                </div>    
           );

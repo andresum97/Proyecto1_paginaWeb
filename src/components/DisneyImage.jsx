@@ -13,8 +13,16 @@ class DisneyImage extends Component{
         let text = this.props.text;
         let image = this.props.image;
         let textsize =  this.props.textsize+"vw";
-        console.log(textsize);
+        let subtitle = this.props.subtitle;
         let color = {
+        }
+        const subtitletext = {
+            fontSize: "1.2vw",
+            textAlign: "center",
+            marginTop: "15px"
+        }
+        const breakT = {
+            margin: "0 0 15px 0"
         }
         if(colortext=="1"){
             color = {
@@ -26,7 +34,7 @@ class DisneyImage extends Component{
                 fontSize: textsize
             }
         }
-        console.log(color);
+        
         const styletext={
             fontSize: "2vw"
         }
@@ -34,10 +42,13 @@ class DisneyImage extends Component{
             <div className="promotionsContainer" style={styletext}>
                     <img src={image} alt="MickyHalloween" className="promotionsImage"/>
                     <div className="promotionsText" style={color}>
-                        <strong>
+                        <strong style={breakT}>
                             {text}
                         </strong>
+                        <br/>
+                        <div style={subtitletext}>{subtitle}</div>
                     </div>
+                    
             </div>
         );
     }
